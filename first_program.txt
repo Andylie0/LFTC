@@ -1,0 +1,9 @@
+set fosterStreet = { street_name : 'Foster Ave', duration : 30, average_vehicle_count : 0 };
+set liveCount = GET_LIVE_VEHICLE(fosterStreet.street_name);
+set threshold = 100;
+if liveCount > threshold then
+    call_police('Congestion detected on Foster Ave');
+    cycle_semaphore(fosterStreet.street_name, 60);
+else
+    send_report('Traffic flow in parameters!!');
+end

@@ -1,0 +1,26 @@
+set cuzaStreet = { street_name : 'Strada Cuza Voda', duration : 45, average_vehicle_count : 120 };
+set viteazulStreet = { street_name : 'Bulevardul Mihai Viteazul', duration : 40, average_vehicle_count : 90 };
+set stefanStreet = { street_name : 'Strada Stefan din Suceava', duration : 35, average_vehicle_count : 50 };
+set lucaciuStreet = { street_name : 'Strada Vasile Lucaciu', duration : 30, average_vehicle_count : 40 };
+set streetList = [ cuzaStreet, viteazulStreet, stefanStreet, lucaciuStreet ];
+set index = 0;
+set maxCycles = 3;
+for currentSem in streetList
+    set liveVehicles = GET_LIVE_VEHICLE(currentSem.street_name);
+    set averageVehicles = currentSem.average_vehicle_count;
+    if liveVehicles > averageVehicles then
+        call_police(currentSem.street_name);
+    else
+        if liveVehicles < averageVehicles/2 then
+            cycle_semaphore(currentSem.street_name, currentSem.duration + 15);
+            send_report('Artificial traffic deployed!');
+        else
+            cycle_semaphore(currentSem.street_name, currentSem.duration);
+            send_report('Standard duration applied');
+        end
+    end
+end_for
+while index < maxCycles
+    set index = index + 1;
+    send_report('Monitoring cycle completed');
+end_while

@@ -1,0 +1,31 @@
+<program> ::= <statement_list>
+<statement list> ::= <statement> | <statement> <statement_list>
+<statement> ::= <assignment_stmt> ";"| <conditional_stmt> | <loop_stmt> | <io_stmt> ";"
+<semaphore_record> ::= "{" "street_name" ":" <expression> "," "duration" ":" <expression> "," "average_vehicle_count" ":" <expression> "}"
+<list_literal> ::= "[" "]" | "[" <element_list> "]"
+<element_list> ::= <expression> | <expression> "," <element_list>
+<assignment_stmt> ::= "set" <identifier> "=" <expression>
+<conditional_stmt> ::= "if" <condition> "then" <statement_list> "end" | "if" <condition> "then" <statement_list> "else" <statement_list> "end"
+<loop_stmt> ::= "for" <identifier> "in" <expression> <statement_list> "end_for"
+                           | "while" <condition> <statemement_list> "end_while"
+<io_stmt> ::= "send_report" "(" <expression> ")" | "call_police" "(" <expression> ")" | "cycle_semaphore" "(" <expression> "," <expression> ")"
+<condition> ::= <expression> <rel_op> <expression>
+<expression> ::= <term> | <expression> <add_op> <term>
+<add_op> ::= "+" | "-"
+<term> ::= <factor> | <term> <mult_op> <factor>
+<mult_op> ::= "*" | "/"
+<factor> ::= <identifier> | <member_access> | <number> | <string_literal> | <semaphore_record> | <list_literal> | <builtin_call> | "(" <expression> ")"
+<identifier> ::= <letter> <ident_rest>  
+<ident_rest> ::= <letter> <ident_rest> | <digit> <ident_rest> | epsilon
+<member_access> ::= <identifier> "." <identifier>
+<builtin_call> ::= "GET_LIVE_VEHICLE" "(" <expression> ")"
+<rel_op> ::= ">" | "<" | ">=" | "<=" | "==" | "!="
+<string_literal> ::= "'" <string_chars> "'"
+<string_char> ::= <letter> | <digit> | " " | "_" | "-" | ":" | "."
+<string_chars> ::= <string_char> <string_chars> | epsilon
+<number> ::= "0" | <optional_minus> <non_zero_digit> <digits>  
+<optional_minus> ::= "-" | epsilon  
+<digits> ::= <digit> <digits> | epsilon  
+<letter> ::= "a" | … | "z" | "A" | … | "Z"  
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"  
+<non_zero_digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" 

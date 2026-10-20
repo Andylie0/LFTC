@@ -1,0 +1,12 @@
+Bucket   | Position | Symbol
+-----------------------------------
+0        | 0        | 60
+1        | 0        | 'Foster Ave'
+1        | 1        | liveCount
+4        | 0        | threshold
+5        | 0        | 'Traffic flow in parameters!!'
+8        | 0        | 'Congestion detected on Foster Ave'
+9        | 0        | 100
+14       | 0        | 30
+14       | 1        | 0
+15       | 0        | fosterStreet

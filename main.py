@@ -13,7 +13,7 @@ def run_pipeline(input_file, pif_out_path, st_out_path, err_out_path):
         for token, pos in pif:
             f.write(f"{token:<20} | {pos}\n")
 
-    st.display()
+    st.display(st_out_path)
 
     with open(err_out_path, "w") as f:
         if errors:

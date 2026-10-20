@@ -20,8 +20,8 @@ class SymbolTable:
                 return (index, list_index)
         return -1
 
-    def display(self):
-        with open("outputs/ST.out", "w") as f:
+    def display(self,filename="outputs/ST.out"):
+        with open(filename, "w") as f:
             f.write(f"{'Bucket':<8} | {'Position':<8} | Symbol\n")
             f.write("-" * 35 + "\n")
             for bucket_idx, bucket in enumerate(self.table):

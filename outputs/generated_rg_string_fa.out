@@ -1,0 +1,6 @@
+N: q0 q1
+T: letter special_sign
+S: q0
+P:
+  q0 -> letter q1 | letter
+  q1 -> letter q1 | letter | special_sign q1 | special_sign

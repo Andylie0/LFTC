@@ -1,0 +1,7 @@
+N: q0 q1 q2 q3
+T: 0 minus non_zero_digit digit
+S: q0
+P:
+  q0 -> 0 q1 | 0 | minus q2 | non_zero_digit q3 | non_zero_digit
+  q2 -> non_zero_digit q3 | non_zero_digit
+  q3 -> digit q3 | digit

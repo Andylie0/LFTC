@@ -1,0 +1,7 @@
+Q: q0 q1
+Alphabet: letter special_sign
+Initial: q0
+Final: q1
+q0 letter q1
+q1 letter q1
+q1 special_sign q1

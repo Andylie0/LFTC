@@ -1,0 +1,9 @@
+Q: q0 q1 q2 q3
+Alphabet: 0 minus non_zero_digit digit
+Initial: q0
+Final: q1 q3
+q0 0 q1
+q0 minus q2
+q0 non_zero_digit q3
+q2 non_zero_digit q3
+q3 digit q3

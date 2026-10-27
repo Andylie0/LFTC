@@ -4,7 +4,7 @@ from lexical_analysis import Scanner
 
 def run_pipeline(input_file, pif_out_path, st_out_path, err_out_path):
     st = SymbolTable(buckets=17)
-    scanner = Scanner(token_file="token.in", symbol_table=st)
+    scanner = Scanner(token_file="inputs/token.in", symbol_table=st)
 
     pif,errors = scanner.scan(input_file)
     with open(pif_out_path, "w") as f:
